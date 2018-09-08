@@ -2,9 +2,10 @@ from flask import Flask, g, jsonify, render_template
 
 import config
 import models
+from resources.todos import todos_api
 
 app = Flask(__name__)
-
+app.register_blueprint(todos_api)
 
 @app.route('/')
 def my_todos():
