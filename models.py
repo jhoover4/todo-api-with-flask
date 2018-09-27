@@ -61,6 +61,7 @@ class User(Model):
 class Todo(Model):
     name = CharField()
     created_at = DateTimeField(default=datetime.datetime.now())
+    user = ForeignKeyField(User, related_name="user_set")
 
     class Meta:
         database = DATABASE
