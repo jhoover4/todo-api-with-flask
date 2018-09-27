@@ -1,6 +1,4 @@
-import json
-
-from flask import Blueprint, make_response
+from flask import Blueprint
 from flask_restful import Resource, Api, reqparse, fields, marshal, marshal_with, url_for, abort
 
 import models
@@ -46,7 +44,7 @@ class TodoList(TodoBase):
     def get(self):
         """Returns a list of all todos associated with user."""
 
-        todos = [marshal(todo, todo_fields) for todo in models.Todo.select().where(models.Todo.user_id == g.user.id)]
+        todos = [marshal(todo, todo_fields) for todo in models.Todo.select().where(models.Todo.user == g.user)]
 
         return todos
 

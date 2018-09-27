@@ -1,9 +1,9 @@
 [
-    {"name": "clean the house"}, 
-    {"name": "water the dog"}, 
-    {"name": "feed the lawn"},
-    {"name": "pay dem bills"},
-    {"name": "run"}, 
-    {"name": "swim"}
+    {"name": "clean the house", "user_id": "1"},
+    {"name": "water the dog", "user_id": "1"},
+    {"name": "feed the lawn", "user_id": "1"},
+    {"name": "pay dem bills", "user_id": "1"},
+    {"name": "run", "user_id": "1"},
+    {"name": "swim", "user_id": "1"}
   ]
   
