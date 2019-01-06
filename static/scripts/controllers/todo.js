@@ -11,7 +11,7 @@ angular.module('todoListApp')
     var filteredTodos = $scope.todos.filter(function(todo){
       if(todo.edited) {
         return todo;
-      };
+      }
     });
     filteredTodos.forEach(function(todo) {
       if (todo.id) {
