@@ -8,27 +8,25 @@
 </head>
 <body>
 
-  <h1>My TODOs!</h1>
+<h1>My TODOs!</h1>
 
-  <div class="list" id="app">
+<div class="list" id="app">
     <div class="add">
-      <a href="#" v-on:click="addTodo">
-        + Add a New Task</a>
-      </div>
-      <todo-item
-              v-for="todo in todos"
-              v-bind:key="todo.id"
-              v-bind:todo="todo"
-      ></todo-item>
-   </div>
+        <button v-on:click="addTodo">+ Add a New Task</button>
+    </div>
+    <todo-item
+            v-for="todo in todos"
+            v-bind:key="todo.id"
+            v-bind:todo="todo"
+            v-on:delete="deleteTodo(todo)"
+            v-on:save="saveTodo(todo)"
+            v-on:editing-complete="updateTempTodo(todo)"
+            v-on:todo-completed="sortTodos()"
+    ></todo-item>
+</div>
 
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.min.js"></script>
-  <script src="/static/scripts/app.js"></script>
-  <script src="/static/scripts/resources/todo.js"></script>
-  <script src="/static/scripts/controllers/main.js"></script>
-  <script src="/static/scripts/controllers/todo.js"></script>
-  <script src="/static/scripts/directives/todo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="/static/scripts/app.js"></script>
 </body>
 </html>
