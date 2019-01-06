@@ -58,7 +58,7 @@ class TestTodoApi(BaseTestCase):
         user_todos = models.Todo.select().where(models.Todo.user_id == self.test_user.id)
 
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.data, user_todos)
+        self.assertEqual(response.json[0]['name'], user_todos[0].name)
 
     def test_todos_post(self):
         """Test todo_list post method."""
