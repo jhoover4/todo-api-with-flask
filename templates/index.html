@@ -10,22 +10,11 @@
 
 <h1>My TODOs!</h1>
 
-<div class="list" id="app">
-    <div class="add">
-        <button v-on:click="addTodo">+ Add a New Task</button>
-    </div>
-    <todo-item
-            v-for="todo in todos"
-            v-bind:key="todo.id"
-            v-bind:todo="todo"
-            v-on:delete="deleteTodo(todo)"
-            v-on:save="saveTodo(todo)"
-            v-on:editing-complete="updateTempTodo(todo)"
-            v-on:todo-completed="sortTodos()"
-    ></todo-item>
+<div id="app">
+    <todo-app></todo-app>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="/static/scripts/app.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script src="/static/scripts/dist/todo-app.js"></script>
 </body>
 </html>

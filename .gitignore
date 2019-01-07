@@ -22,3 +22,9 @@ htmlcov/
 *,cover
 
 *.sqlite
+
+## For Vuejs
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
